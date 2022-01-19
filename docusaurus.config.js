@@ -8,34 +8,44 @@ module.exports = {
   organizationName: 'your-org', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
-//    algolia: {
-//      apiKey: 'YOUR_API_KEY',
-//      indexName: 'YOUR_INDEX_NAME',
-//    },
     navbar: {
-      title: 'My Site',
+      title: "NavVis",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: "NavVis Logo",
+        src: "img/IVION-Logo-negative.svg",
       },
-      items: [],
     },
+    hideableSidebar: true, // Remove to hide the left pane
+    //sidebarCollapsible: false, // Remove to disable the left-pane collapse/expand button
     footer: {
-      style: 'dark',
-      links: [],
-      copyright: `Copyright © ${new Date().getFullYear()}.`,
+      style: "dark",
+      copyright: `Copyright © ${new Date().getFullYear()} NavVis GmbH.`,
+    },
+    // The following determines the dark/light mode switch styling
+    colorMode: {
+      respectPrefersColorScheme: true,
+      switchConfig: {
+        lightIcon: "\u{25CB}",
+        darkIcon: "\u{25CF}",
+        darkIconStyle: {
+          color: `#f4f4f4`,
+        },
+        lightIconStyle: {
+          color: `#f4f4f4`,
+        },
+      },
     },
   },
   presets: [
     [
       '@docusaurus/preset-classic',
       {
+        blog: false,
+        pages: false,
         docs: {
-          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // In order to display a link to edit your documents, please change this value.
-          // Refer to Docusaurus v2 documentation for more info.
-          // editUrl: 'http://easydita.com',
+          path: './docs',
+          routeBasePath: '/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -44,13 +54,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    // To enable the local search functionality, uncomment the following code:
-    // [require.resolve('@cmfcmf/docusaurus-search-local'), {
-    // indexDocs: true,
-    //     docsRouteBasePath: '/',
-    //     indexDocSidebarParentCategories: 3,
-    //     indexPages: false,
-    //     language: "en"
-    // }]
+    [require.resolve('@cmfcmf/docusaurus-search-local'),{}]
   ],
 };
