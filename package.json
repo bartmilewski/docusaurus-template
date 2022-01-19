@@ -1,5 +1,5 @@
 {
-  "name": "my-dino",
+  "name": "docu",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,11 +8,13 @@
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
-    "serve": "docusaurus serve"
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "latest",
-    "@docusaurus/preset-classic": "latest",
+    "@docusaurus/core": "2.0.0-beta.9",
+    "@docusaurus/preset-classic": "2.0.0-beta.9",
+    "@cmfcmf/docusaurus-search-local": "latest",
     "@mdx-js/react": "latest",
     "clsx": "latest",
     "react": "latest",
@@ -20,7 +22,7 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">0.5%",
       "not dead",
       "not op_mini all"
     ],
