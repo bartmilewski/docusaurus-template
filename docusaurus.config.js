@@ -46,6 +46,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           path: './docs',
           routeBasePath: '/',
+           "remarkPlugins": require('./src/remark/convertYoutubeEmbeds.js'),
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
